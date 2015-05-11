@@ -1,0 +1,83 @@
+
+html {
+  background-color: #FFFFCC;
+}
+a {
+  text-decoration: none;
+}
+#Container {
+  width: auto;
+  height: auto;
+  background-color: grey;
+  #position: relative;
+  margin: auto;
+}
+
+#Nav {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+#NavRight {
+  position: absolute;
+  right: 20px;
+  top: 5%;
+}
+
+#RightMain{
+  #position: absolute;
+  float: right;
+  margin: 10%;
+  top: 50px;
+}
+
+#LeftMain {
+  height: 300px;
+  width: 350px;
+  position: absolute;
+  left: 0;
+  bottom: 125px;
+}
+
+.Button {
+
+    display: block;
+    height: 50px;
+    width: 150px;
+    margin: 10px;
+    background: #99CC00;
+    border-radius: 30px;
+    border: 3px solid #141A0A;
+    color: #293314;
+    text-align: center;
+    font: bold 1.5em/50px "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
+}
+
+.ButtonSmall {
+
+    /*Step 2: Basic Button Styles*/
+    display: block;
+    height: 35px;
+    width: 35px;
+    margin: 10px;
+    background: #FFBC91;
+    #border-radius: 2px solid rgba(33, 68, 72, 0.59);
+    border-radius: 5px;
+
+    /*Step 3: Text Styles*/
+    color: rgba(0, 0, 0, 0.55);
+    text-align: center;
+    font: bold 1em/50px "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
+}
+
+/*Step 3: Link Styling*/
+a.Button {
+    text-decoration: none;
+}
+
+
+
+
+
+
