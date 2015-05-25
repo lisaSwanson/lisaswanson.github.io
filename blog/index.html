@@ -20,18 +20,67 @@
   </div>
 
 
-    <h2 id="title">My Personal Blog by Lisa Swanson</h2>
+    <h2 id="title">My Personal Blog by Lisa Swanson</h2><br>
+
+
+
 
   <div id="techblog">
     <h1>Technology</h1>
-    <h2 id="#">Using Array's and Hashes</h2>
+
+
+      <ul>
+        <strong>
+    <li><a href="#group_by">Using the “group_by” Method in Ruby</a></li>
+    <li><a href="#using_array">Using Array's and Hashes</a></li>
+    <li><a href="#css">CSS; Margins, Borders, Padding are you confused?</a></li>
+    <li><a href="#why_git">Why You Should Consider Using GitHub</a></li>
+    </ul></strong>
+    <h2 id="group_by">Using the “group_by” Method in Ruby</h2>
+    <h4>May 24, 2015</h4>
+    <p>The group_by method in Ruby, is a method that belongs to the enumerable module.  Unlike a class in Ruby a module provides access to the methods  across multiple classes.  Let me show you...take the follow array<br><br>
+
+    <p><b>array=[1, 4, 6, 7, 3, 8, 2, 9, 5, 7, 3, 2, 1, 0, 4] </b></p>
+
+    and you are tasked with returning the array with the common elements next to each other. No problem your thinking, I will use Array#sort like this:
+
+    <p><b>>>sorted_array = array.sort<br>
+    =>[0, 1, 1, 2, 2, 3, 3, 4, 4, 5, 6, 7, 7, 8, 9]</b></p>
+
+    and you would be done - easy peasy…wait there was another part to the challenge…you also need to “sort” another array that looks like this :
+  <p><b>>>array = [1, 4, 6, 7, 3, "blue", 8, 2, 3, 2, 1, 0, 4, "green", 7, "yellow", 9, "blue", "green", 5, "yellow"]</b></p>
+
+  you think no problem…execute “sort”
+
+  <p><b>>>sorted_array = array.sort<br>
+  =>`sort': comparison of Fixnum with String failed (ArgumentError)</b></p>
+
+  Oops,you can’t use method “sort”(which belongs to the Array class) on mixed a element array. Enter…”group_by" and the “mixin” module that will allow you to “sort_of” sort a mixed element "container". When we “group_by" our array with the following syntax:
+
+  <p><b>>>array.group_by{|sort| sort}</b></p>
+
+  we will be returned a hash that looks like this:
+
+  <p><b>=>{1=>[1, 1], 4=>[4, 4], 6=>[6], 7=>[7, 7], 3=>[3, 3], 8=>[8], 2=>[2, 2], 9=>[9], 5=>[5], 0=>[0], "blue"=>[“blue”, “ blue”], "green"=>["green", "green"], "yellow"=>["yellow", "yellow"]}</b></p>
+
+  No it isn’t as pretty as Array#sort but it is the beginning step to get the results you desire but lets keep going. Now our hash class is now available so lets fetch just our strings from the hash with this example:
+
+  <p><b>>>my_arr = my_array.group_by{|name| name.is_a? String}.fetch(true).sort</b></p>
+
+  We will need to apply the sort and the end of this “chain” but that is ok because we no longer have a mixed element container.
+
+  <p><b>["blue", "blue", "green", "green", "yellow", "yellow”]</b></p>
+
+  Thanks for following along while we learn this Ruby language together.
+    </p>
+
+
+    <h2 id="using_array">Using Array's and Hashes</h2>
     <h4>May 17, 2015</h4>
     <p>
       As newbie programmers we begin our first look at arrays and hashes and ask ourselves when do we use them.  Being a very visual person I see arrays and hashes as expandable containers that I can put anything I want inside them.  These containers differ in that the array container is wide open but the hash container has a divider so there are two compartments.  One side has a label that says “key” and the other says “value”.   You are probably beginning to wonder why you would we want to use one over the other and I will try to just give you enough information to get you curious enough to want to delve deeper into the “why”.  Arrays - they are just great for storage and in ruby you can throw and ton of “objects” in one like String, numbers, Fixnum, Hash, Symbol, even other arrays.  Hashes, to me, are similar to databases - let’s say you are filling out a form that asks you for your name, address, etc. as you are filling in the boxes that information could be stored in a hash using “name” as a key and what you enter as a value and then saved and retrieved using the key/value pair. Arrays and hashes are the work horses in programming and I look forward to learning how to get the most from them.
     </p>
 
-    <a href="#css" class="links">CSS; Margins, Borders, Padding are you confused?</a><br>
-    <a href="#why_git" class="links">Why You Should Consider Using GitHub</a><br>
 
 
     <h3 id="css">CSS; Margins, Borders, Padding are you confused?</h3>
@@ -55,13 +104,34 @@
   <div id="personalblog">
     <h1>Personal Reflections</h1>
 
-<h2 id="#">What Kind of Thinker am I?</h2>
+    <ul>
+    <strong>
+    <li><a href="#women_leaving">Why Women are Leaving the Tech Industry</a></li>
+    <li><a href="#what_kind">What Kind of Thinker am I?</a></li>
+    <li><a href="#kit_table">Kitchen vs. Table...Who am I?</a></li>
+    </ul></strong>
+
+
+    <h2 id="women_leaving">Why Women are Leaving the Tech Industry</h2>
+    <h4>May 24, 2015</h4>
+    <p>Below is my personal reflection after reading and watching the interview at this link:<br><br>
+
+    <a href="http://www.latimes.com/opinion/op-ed/la-oe-gardner-women-in-tech-20141207-story.html"><strong>Why Women Are Leaving the Tech Industry in Droves by Tracey Lien</a></strong><br><br>
+
+    Image my chagrin when I read that line…here I am, a women at 52, changing careers to the technology industry for the very reason I am wanting to leave my current career.  I am (as I have said before) a women electrical contractor/electrician.  It has been an up hill battle trying to get “in” with a decent general contractor.  In my 3 years running my own company, I finally did find a “crazy” but decent general contractor and without “him” feeding me the “big jobs” I wouldn’t have been able to pay my bills.<br><br>
+
+    What is the over arching reason that women are leaving the tech industry…gender bias (read the article for the details).  At first, I felt “hey it’s a job, doing what you love, I know it’s not fair but what is in this thing called life”,  but after hearing the stories of inequality I feel differently.  Yes I do think is wrong that women are leaving the industry because if we “leave” that is as good as failing.  We can’t affect change but getting “beaten down” by the fact that “gender bias” exists and will keep existing unless we stay strong and in the industry.  We will never have our “Martin Luther King” moment if we don’t.<br><br>
+
+    BUT, as with any group that is feeling inequality we need to have resources that provide us with the strength to stay motivated.  One of those that was mentioned in the article is a group called “Women Who Code”.  If you are a women and you are feeling the pressure of gender bias try to find an outlet to release that pressure.  I know that doesn’t make change but it helps get your sanity.  Hopefully if more women stay, over time, more women will be become managers/veeps that can manage without the gender bias.
+    </p>
+
+<h2 id="what_kind">What Kind of Thinker am I?</h2>
     <h4>May 17, 2015</h4>
     <p>
       I have recently been asked to look at a couple of “thinking” approaches.  One of them is a "growth vs fixed mindset" and as I was reading a couple of articles on subject I immediately felt I was of the growth mindset.  I know I don't fit anywhere in to the fixed mindset but as I was reading more about the growth mindset I knew that is me but I also know I need to lighten up about how I interpret my “failures".  I feel I can learn anything and do anything but I grew up with success being measured by the pay check you bring home, and in that area I have never succeeded to the level of expectations of the people I am close with.  The other thinking/mind style is proposed by Anthony Gregorc  and when I took his quiz the feedback I received was that I was a Concrete Random thinker.  As with most things in life you have pros and cons and I look forward to working though any of the cons I think will prevent me from achieving my goals.  Also what is different for me at my age is...I just don’t need to “hold on” to a certain identity. I feel like I can ebb and flow as needed to work with, and produce with, those around me while I am on this journey to become a Jr. Programmer.
     </p>
 
-   <a href="#kit_table" class="links">Kitchen vs. Table...Who am I?</a><br>
+
 
     <h3 id="kit_table">Kitchen vs. Table...Who am I?</h3>
     <h4>Sunday, May 3, 2015</h4>
