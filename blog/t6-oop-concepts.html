@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<head>
+  <title>Your page title here</title>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" type="text/css" href="../stylesheets/blog-stylesheet.css">
+</head>
+
+<body>
+
+  <div id="header">
+    <ul>
+      <li class="navleft"><a href="#">Home</a></li>
+      <li class="navleft"><a href="#">Gallery</a></li>
+      <li class="navleft"><a href="#">About Me</a></li>
+    </ul>
+    <ul>
+      <li class="navright1"><a href="https://www.twitter.com/LisaDeeSwanson"><img src="../twitter.png" width="30" height="30"></a></li>
+      <li class="navright2"><a href="https://github.com/lisaswanson/"><img src="../Octocat.png" width="30" height="30"></a></li>
+    </ul>
+  </div>
+
+
+    <h2 id="title">My Personal Blog by Lisa Swanson</h2>
+
+  <div id="techblog">
+    <h1>Technology</h1>
+
+    <a href="variable_scope" class="links">Ruby - Variable Scoping</a><br>
+
+    <h2 id="#">Blog title</h2>
+    <h4>June 4, 2015</h4>
+    <p>
+     Ruby - Variable Scoping
+
+We couldn’t be programmers without variables and Ruby is no different.  Ruby has 5 variable types that I would like to share with you.<br><br>
+
+$global_variables - these variables begin with $.  Uninitialized global variables have the value of “nil”.  Assignment to a global variable alters the global status and will produce a warning from ruby that you are changing it’s value.  Global variables don’t seem to have much of a following and seemed to be frowned upon as making “programs cryptic”.<br><br>
+
+@instance_variables are variables available when a class is instantiated and only available to that instance of class and its methods.<br><br>
+
+@@class_variables must be initialized before being used in method definitions.  These class variables are shared among instances of the class or module in which the class variables are defined.<br><br>
+
+local_variables begin with lowercase letter or _. The scope of the local variable exist until the end of the current scope is reached.  The lifetime of local variables is determined when Ruby parses the program.<br><br>
+
+CONSTANTS might seem like something that should well just be constant.  They are referenced by all uppercase letters Ruby will also warn you if you are trying to make an assignment to a constant that has already been initialized.<br><br>
+
+There are also special variables that have the appearance of local variables but these behave like constants and they can’t be assign any values.  They are self - the receiver object of the current method; true - value representing true; false - value representing false; nil - representing undefined;  _file_: - the name of the current source file; _LINE_: - the current line number in the source file.
+    </p>
+  </div>
+
+
+
+
+</body>
+
+</html>
+
