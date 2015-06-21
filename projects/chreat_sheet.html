@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="../stylesheets/cheat_sheet.css">  <!-- Insert a link to the stylesheet here -->
+    <script type="text/javascript">
+    function showhide()
+     {
+           var div = document.getElementById("show_more");
+    if (div.style.display !== "none") {
+        div.style.display = "none";
+    }
+    else {
+        div.style.display = "block";
+    }
+     }
+  </script>
+    <title>Git Cheat Sheet</title>
+  </head>
+
+  <body>
+    <header>
+      <h1>Regular Expression Cheat Sheet</h1>
+      <p>A regular expression (abbreviated regex or regexp and sometimes called a rational expression) is a sequence of characters that define a search pattern, mainly for use in pattern matching with strings, or string matching, i.e. "find and replace"-like operations.</p>
+    </header>
+
+     <article>
+        <h2></h2>
+
+      </article>
+
+    <section class="column-1">
+      <article>
+        <h2>REGULAR EXPRESSION DEFINITIONS</h2>
+        <p></p>
+        <p> To see a summary of each command, click it.</p>
+
+        <details>
+          <summary><code>PATTERNS</code></summary>
+          <p>Each character in a regular expression is either understood to be a metacharacter with its special meaning, or a regular character with its literal meaning. Together, they can be used to identify textual material of a given pattern, or process a number of instances of it that can vary from a precise equality to a very general similarity of the pattern.<br>
+          The pattern sequence itself is an expression that is a statement in a language designed specifically to represent prescribed targets in the most concise and flexible way to direct the automation of text processing of general text files, specific textual forms, or of random input strings.</p>
+        </details>
+
+        <details>
+          <summary><code>LITERAL</code></summary>
+          <p>A literal is any character we use in a search or matching expression, for example, to find ind in windows the ind is a literal string - each character plays a part in the search, it is literally the string we want to find.</p>
+        </details>
+
+        <details>
+          <summary><code>METACHARATER</code></summary>
+          <p>A metacharacter is one or more special characters that have a unique meaning and are NOT used as literals in the search expression, for example, the character ^ (circumflex or caret) is a metacharacter.</p>
+        </details>
+
+        <details>
+          <summary><code>TARGET STRING</code></summary>
+            <p>This term describes the string that we will be searching, that is, the string in which we want to find our match or search pattern.</p>
+        </details>
+
+        <details>
+          <summary><code>SEARCH EXPRESSION</code></summary>
+          <p>Most commonly called the regular expression. This term describes the search expression that we will be using to search our target string, that is, the pattern we use to find what we want.</p>
+        </details>
+
+        <details>
+          <summary><code>ESCAPE SEQUENCE</code></summary>
+          <p>An escape sequence is a way of indicating that we want to use one of our metacharacters as a literal. In a regular expression an escape sequence involves placing the metacharacter \ (backslash) in front of the metacharacter that we want to use as a literal, for example, if we want to find (s) in the target string window(s) then we use the search expression \(s\) and if we want to find \\file in the target string c:\\file then we would need to use the search expression \\\\file (each \ we want to search for as a literal (there are 2) is preceded by an escape sequence \).</p>
+        </details>
+
+        </article>
+
+
+<article>
+        <h2>REGULAR EXPRESSION BASICS</h2>
+        <p></p>
+        <p> To see a summary of each command, click it.</p>
+
+        <details>
+          <summary><code>. DOT</code></summary>
+          <p>DESCRIPTION: Any character (except \n newline)</p>
+            <p>USE: a.c </p>
+            <p>EXAMPLE: abc, aac, acc, adc, aec, ... </p>
+        </details>
+
+        <details>
+          <summary><code>a </code></summary>
+          <p>DESCRIPTION: The character a</p>
+        </details>
+
+        <details>
+          <summary><code>ab</code></summary>
+          <p>DESCRIPTION: The string ab</p>
+        </details>
+
+        <details>
+          <summary><code>a|b</code></summary>
+            <p>DESCRIPTION: a or b</p>
+            <p>EXAMPLE: a|b </p>
+        </details>
+
+        <details>
+          <summary><code>a*</code></summary>
+          <p>DESCRIPTION: 0 or more a's.</p>
+        </details>
+
+        <details>
+          <summary><code>\ BACKSLASH</code></summary>
+          <p>DESCRIPTION: Preceding one of the above, it makes it a literal instead of a special character. Preceding a special matching character, entry on CHARACTER ESCAPES or CHARACTER CLASSES.</p>
+            <p>USE: a\sc </p>
+            <p>EXAMPLE: a c </p>
+        </details>
+
+        </article>
+
+        <article>
+         <h2>REGULAR EXPRESSION QUANTIFIERS</h2>
+        <p></p>
+        <p> To see a summary of each command, click it.</p>
+                <details>
+          <summary><code>* ASTERISK</code></summary>
+          <p>DESCRIPTION: 0 or more of previous expression.</p>
+            <p>USE: ab*c </p>
+            <p>EXAMPLE: ac, abc, abbc, abbbc, ... </p>
+        </details>
+
+        <details>
+          <summary><code>+ PLUS SYMBOL</code></summary>
+          <p>DESCRIPTION: 1 or more of previous expression.</p>
+            <p>USE: ab+c </p>
+            <p>EXAMPLE: abc, abbc, abbbc, ... </p>
+        </details>
+
+        <details>
+          <summary><code>? QUESTION MARK</code></summary>
+          <p>DESCRIPTION: 0 or 1 of previous expression; also forces minimal matching when an expression might match several strings within a search string.</p>
+            <p>USE: ab?c </p>
+            <p>EXAMPLE: ac, abc </p>
+        </details>
+
+        <details>
+          <summary><code>{...} CURLY BRACES</code></summary>
+          <p>DESCRIPTION: Explicit quantifier notation.</p>
+            <p>USE: ab{2}c </p>
+            <p>EXAMPLE: abbc </p>
+        </details>
+
+        <details>
+          <summary><code>{2}</code></summary>
+          <p>DESCRIPTION: Exactly 2</p>
+        </details>
+
+        <details>
+          <summary><code>{2, 5}</code></summary>
+          <p>DESCRIPTION: Between 2 and 5.</p>
+        </details>
+
+        <details>
+          <summary><code>{2,}</code></summary>
+          <p>DESCRIPTION: 2 or more.</p>
+          <p>Default is greedy. Append ? for reluctant.</p>
+        </details>
+        </article>
+
+        </article>
+
+      <article>
+        <h2>CHARACTER ESCAPES</h2>
+        <p>Also refered to as an "escape sequence" is a way of indicating that we want to use one of our metacharacters as a literal.<br></p>
+    <div id="show_more">
+    <p>In a regular expression an escape sequence involves placing the metacharacter \ (backslash) in front of the metacharacter that we want to use as a literal, for example, if we want to find (s) in the target string window(s) then we use the search expression \(s\) and if we want to find \\file in the target string c:\\file then we would need to use the search expression \\\\file (each \ we want to search for as a literal (there are 2) is preceded by an escape sequence \). </p>
+    </div>
+    <button id="button" onclick="showhide()">Dbl Click to Show More.</button>
+    <p><strong><a href="http://tinyurl.com/5wm3wl">Click here for additional resources.</a></p></strong>
+    <p> To see a summary of each Character Escape, click below.</p>
+
+             <details>
+          <summary><code>ORDINARIY CHARACTERS</code></summary>
+          <p>DESCRIPTION: Characters other than . $ ^ { [ ( | ) ] } * + ? \ match themselves.</p>
+        </details>
+
+        <details>
+          <summary><code>\a BACKSLASH a</code></summary>
+          <p>DESCRIPTION: Matches a bell (alarm) \u0007</p>
+        </details>
+
+
+        <details>
+          <summary><code>\b BACKSLASH B</code></summary>
+          <p>DESCRIPTION: Matches a backspace \u0008 if in a []; otherwise matches a word boundary (between \w and \W characters). </p>
+        </details>
+
+
+        <details>
+          <summary><code>\t BACKSLASH T</code></summary>
+          <p>DESCRIPTION: Matches a tab \u0009. </p>
+        </details>
+
+
+        <details>
+          <summary><code>\r BACKSLASH R</code></summary>
+          <p>DESCRIPTION: Matches a carriage return \u000D. </p>
+        </details>
+
+
+        <details>
+          <summary><code>\v BACKSLASH V</code></summary>
+          <p>DESCRIPTION: Matches a vertical tab \u000B. </p>
+        </details>
+
+
+        <details>
+          <summary><code>\f BACKSLASH f</code></summary>
+          <p>DESCRIPTION: Matches a form feed \u000C. </p>
+        </details>
+
+
+        <details>
+          <summary><code>\n BACKSLASH n</code></summary>
+          <p>DESCRIPTION: Matches a new line \u000A. </p>
+        </details>
+
+
+        <details>
+          <summary><code>\e BACKSLASH e</code></summary>
+          <p>DESCRIPTION: Matches an escape \u001B. </p>
+        </details>
+
+<article>
+        <h2>REGULAR EXPRESSION GROUPS</h2>Regular Expression Groups
+        <p>Exclude temporary files and paths</p>
+
+        <details>
+          <summary><code>{...} CURLY BRACES</code></summary>
+          <p>DESCRIPTION: Explicit quantifier notation.</p>
+            <p>USE: ab{2}c </p>
+            <p>EXAMPLE: abbc </p>
+        </details>
+
+        <details>
+          <summary><code>[...] SQUARE BRACES</code></summary>
+          <p>DESCRIPTION: Explicit set of characters to match.</p>
+            <p>USE: a[bB]c </p>
+            <p>EXAMPLE: abc, aBc </p>
+        </details>
+
+        <details>
+          <summary><code>(...) PARENTHESES</code></summary>
+          <p>DESCRIPTION: Logical grouping of part of an expression.</p>
+            <p>USE: (abc){2} </p>
+            <p>EXAMPLE: abcabc </p>
+        </details>
+        <details>
+          <summary><code>(?...) PARENTHESES</code></summary>
+          <p>DESCRIPTION: Logical grouping of part of an expression. This is a non-capturing group</p>
+            <p>USE: (?:http|ftp)://([^/\r\n]+)(/[^\r\n]*)? </p>
+            <p>EXAMPLE:
+     Match "http://stackoverflow.com/"
+     Group 1: "stackoverflow.com"
+     Group 2: "/"
+
+     Match "http://stackoverflow.com/questions/tagged/regex"
+     Group 1: "stackoverflow.com"
+     Group 2: "/questions/tagged/regex" </p>
+
+In both cases the (?:http|ftp) left out the http from the matching.
+        </details>
+      </article>
+
+
+
+    </section>
+
+    <section class="column-2">
+
+      <article>
+        <h2>REGULAR EXPRESSION ASSERTIONS</h2>
+        <p></p>
+        <p> To see a summary of each command, click it.</p>
+
+        <details>
+          <summary><code>^ CARAT</code></summary>
+          <p>DESCRIPTION: Start of a string.</p>
+            <p>USE: ^abc</p>
+            <p>EXAMPLE: abc, abcdefg, abc123, ...</p>
+        </details>
+
+        <details>
+          <summary><code>$ DOLLAR SIGN</code></summary>
+          <p>DESCRIPTION: End of a string.</p>
+            <p>USE: abc$</p>
+            <p>EXAMPLE: abc, endsinabc, 123abc, ...</p>
+        </details>
+
+        <details>
+          <summary><code>\b BACKSLASH B</code></summary>
+          <p>DESCRIPTION: Matches a backspace \u0008 if in a []; otherwise matches a word boundary (between \w and \W characters). </p>
+        </details>
+                  <details>
+          <summary><code>\B BACKSLASH B</code></summary>
+          <p>DESCRIPTION: Non-word boundary. </p>
+        </details>
+                  <details>
+          <summary><code>(?=abc)</code></summary>
+          <p>DESCRIPTION: Positive lookahead. Matches a group after the main expression without including it in the response.</p>
+
+        </details>
+
+        <details>
+          <summary><code>(?!abc)</code></summary>
+          <p>DESCRIPTION: Negative lookahead. Specifies a group that cannot match after the main expression without including it in the response.</p>
+        </details>
+
+      <article>
+
+          <h2>CHARACTER CLASSES</h2>
+        <p>With a "character class", also called "character set", you can tell the regex engine to match only one out of several characters. Simply place the characters you want to match between square brackets. If you want to match an a or an e, use [ae]. You could use this in gr[ae]y to match either gray or grey.</p>
+
+        <details>
+          <summary><code>. DOT</code></summary>
+          <p>Matches any character except</p>
+        </details>
+
+        <details>
+          <summary><code>\n.</code></summary>
+          <p>If modified by the Singleline option, a period character matches any character. For more information, see Regular Expression Options.</p>
+        </details>
+
+        <details>
+          <summary><code>[aeiou]</code></summary>
+          <p> Matches any single character included in the specified set of characters.
+</p>
+        </details>
+
+        <details>
+          <summary><code>[^aeiou]</code></summary>
+          <p>Matches any single character not in the specified set of characters.</p>
+        </details>
+
+        <details>
+          <summary><code>[0-9a-fA-F]</code></summary>
+          <p>Use of a hyphen (–) allows specification of contiguous character ranges.</p>
+        </details>
+
+        <details>
+          <summary><code>\p{name}</code></summary>
+          <p> Matches any character in the named character class specified by {name}. Supported names are Unicode groups and block ranges. For example, Ll, Nd, Z, IsGreek, IsBoxDrawing.</p>
+        </details>
+
+        <details>
+          <summary><code>\P{name}</code></summary>
+          <p>Matches text not included in groups and block ranges specified in {name}.</p>
+        </details>
+
+        <details>
+          <summary><code>\w</code></summary>
+          <p>Matches any word character. Equivalent to the Unicode character categories [\p{Ll}\p{Lu}\p{Lt}\p{Lo}\p{Nd}\p{Pc}]. If ECMAScript-compliant behavior is specified with the ECMAScript option, \w is equivalent to [a-zA-Z_0-9].</p>
+        </details>
+
+        <details>
+          <summary><code>\W</code></summary>
+          <p>Matches any nonword character. Equivalent to the Unicode categories [^\p{Ll}\p{Lu}\p{Lt}\p{Lo}\p{Nd}\p{Pc}]. If ECMAScript-compliant behavior is specified with the ECMAScript option, \W is equivalent to [^a-zA-Z_0-9].</p>
+        </details>
+
+        <details>
+          <summary><code>\s</code></summary>
+          <p>Matches any white-space character. Equivalent to the Unicode character categories [\f\n\r\t\v\x85\p{Z}]. If ECMAScript-compliant behavior is specified with the ECMAScript option, \s is equivalent to [ \f\n\r\t\v].</p>
+        </details>
+
+        <details>
+          <summary><code>\S</code></summary>
+          <p>Matches any non-white-space character. Equivalent to the Unicode character categories [^\f\n\r\t\v\x85\p{Z}]. If ECMAScript-compliant behavior is specified with the ECMAScript option, \S is equivalent to [^ \f\n\r\t\v].</p>
+        </details>
+
+        <details>
+          <summary><code>\d</code></summary>
+          <p>Matches any decimal digit. Equivalent to \p{Nd} for Unicode and [0-9] for non-Unicode, ECMAScript behavior.</p>
+        </details>
+
+        <details>
+          <summary><code>\D</code></summary>
+          <p>Matches any nondigit. Equivalent to \P{Nd} for Unicode and [^0-9] for non-Unicode, ECMAScript behavior.</p>
+        </details>
+      </article>
+
+            <article>
+        <h2>REGULAR EXPRESSION SPECIAL CHARACTERS</h2>
+        <p>The backslash (\) in a regular expression indicates one of the following: The character that follows it is a special character, as shown in the drop-downs below. These are the more interesting uses of the character escape. </p>
+       <p>To see a summary of each REGEX Special Character, click below.</p>
+
+        <details>
+          <summary><code>\O BACKSLASH WITH ZERO</code></summary>
+          <p>DESCRIPTION: Find a NULL character. </p>
+        </details>
+
+        <details>
+          <summary><code>\xxx BACKSLASH WITH OCTAL CODE</code></summary>
+          <p>DESCRIPTION: Find an ASCII character, where xxx consists of two or three digits that represent the octal character code.</p>
+          <p>EXAMPLE: \040 means to search for the octal value for the space character. </p>
+          <p>NOTE: This construct is interpreted as a backreference if it has only one digit (for example, \2) or if it corresponds to the number of a capturing group. See <a href="https://msdn.microsoft.com/en-us/library/thwdfzxy.aspx">Backreference Constructs</a> in Regular Expressions.</p>
+        </details>
+
+
+        <details>
+          <summary><code>\xdd BACKSLASH x 2-DIGIT HEX CODE</code></summary>
+          <p>DESCRIPTION: Find an ASCII character, where dd is a two-digit hexadecimal character code.</p>
+          <p>EXAMPLE: \x20 means to search for the hex value for the space character. </p>
+        </details>
+
+
+        <details>
+          <summary><code>\cC BACKSLASH c AND LETTER CODE</code></summary>
+          <p>DESCRIPTION: Find ASCII control character.</p>
+          <p>EXAMPLE: \cC means to search for control-C. </p>
+        </details>
+
+
+        <details>
+          <summary><code>\uxxxx BACKSLASH u WITH 4-DIGIT CODE</code></summary>
+          <p>DESCRIPTION: Find a Unicode character using a hexadecimal representation (exactly four digits).</p>
+          <p>DESCRIPTION: Matches a Unicode character using a hexadecimal representation (exactly four digits).</p>
+        </details>
+
+
+        <details>
+          <summary><code>\* BACKSLASH ASTERISK</code></summary>
+          <p>DESCRIPTION: When followed by a character that is not recognized as an escaped character, matches that character.</p>
+          <p>EXAMPLE: \* is the same as \x2A.</p>
+        </details>
+      </article>
+
+      <article>
+        <h2>REGULAR EXPRESSION REPLACEMENT</h2>
+        <p>Exclude temporary files and paths</p>
+
+        <details>
+          <summary><code>$$</code></summary>
+          <p>$$ Inserts $</p>
+        </details>
+
+        <details>
+          <summary><code>$&</code></summary>
+          <p>$& Inserts entire match</p>
+        </details>
+
+        <details>
+          <summary><code>$` DOLLAR SIGN AND BACKTICK</code></summary>
+          <p>$` Inserts preceding string</p>
+        </details>
+
+        <details>
+          <summary><code>$' DOLLAR SIGN AND APOSTROPHE</code></summary>
+          <p>$' Inserts following string</p>
+        </details>
+
+        <details>
+          <summary><code>$Y</code></summary>
+          <p>$Y Inserts "Y'th" captured group</p>
+        </details>
+         <details>
+          <summary><code>| PIPE</code></summary>
+          <p>DESCRIPTION: Alternation.</p>
+            <p>USE: bill|ted </p>
+            <p>EXAMPLE: ted, bill </p>
+        </details>
+
+
+      </article>
+      <article>
+        <h2>REGULAR EXPRESSION FLAGS</h2>
+        <p>This is a list of the modifiers that influence how searches are done.</p>
+
+        <details>
+          <summary><code>g</code></summary>
+          <p>g Stands for Global Match</p>
+        </details>
+
+        <details>
+          <summary><code>i</code></summary>
+          <p>i stands for Ignore case</p>
+        </details>
+
+        <details>
+          <summary><code>m</code></summary>
+          <p>m performs multiline matching. ^ and $ match start and end of line</p>
+        </details>
+      </article>
+
+    </section>
+
+    <footer>
+        <p>Awesome collarboration between Lisa Swanson and Lawrence Schreiber during Phase0-Unit3, Week8 mandatory pairing. </p>
+    </footer>
+
+  </body>
+
+</html>
