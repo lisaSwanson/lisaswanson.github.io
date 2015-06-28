@@ -1,0 +1,109 @@
+$(document).ready(function(){
+
+  $("figure").hover(function() {
+    $(this).find("ul>li").stop().fadeToggle(1500);
+  });
+
+  $act_rec = ("<p>ActiveRecord is magic to those who use the web application development framework Rails. Rails in written in the Ruby language which is the magic behind ActiveRecord. Let's demystify the magic behind ActiveRecord.  ActiveRecord wraps your tables in classes so that instances of these classes become the rows in the database. These instances allow mapping between classes and tables, attributes and columns. It also gives associations between objects defined by simple class methods.<br><br> ActiveRecord uses SQL to query the database and provides your instance of ActiveRecord with the data you need to CRUD. Every ActiveRecord object stores the values for its attributes in a private instance variable called @attributes which is a hash of the names and the values of the database attributes. ActiveRecord also adds methods for accessing each attribute. ActiveRecord seems like magic because all the heavy lifting of creating, reading, updating or deleting (CRUD) has already been developed in the many class methods utilized during an ActiveRecord session. <br><br>As I write this blog I haven't yet used Rails and have only written a handful of Ruby methods but I already can appreciated the functionality of ActiveRecord and I look forward to learning more.</p>");
+
+  $("#blog_content8").click(function() {
+      $(this).after($act_rec);
+  });
+
+    $ruby_js = ("<p>Ruby as a first language has been a mental triathlon having to learn all the 'built in' classes and methods. Javascript, at first blush, seems more straight forward…less 'reading between the lines' but that just means typing more lines of code to get your job done.  As I start learning both of these programs I am formulating a strong opinion about one over the other and that is…don't.  They are different and they are used for completely different purposes so what sense does it make to compare JavaScript functions vs Ruby methods?  Or that is takes procs, blocks, and lambdas to create the 'functionality' of a JavaScript function.  You learn them both, and as you add more languages to your arsenal you might waste time wishing for some easier way to iterate in JavaScript or scratching your head over which class method is best for your job, but just don’t. <br><br>But since you are wondering one of the more interesting differences I have noticed is hash tables... they don’t behave nor are they called that in JavaScript. Javascript has something called an 'object literal'.  Looks like a hash, even acts like a hash in a way but looks can be deceiving. I consider a hash in Ruby to be a container of key&value 'elements' that you retrieve and use when you need to.  Javascript’s 'object literals' act like hashes but are not tracked like indexed based associated arrays so if you tried to reference the length of a property you would get undefined - that is because in Javascript the length property of an object is not incremented when a new properties\(keys\) are added\(so not like a hash table\).</p>");
+
+  $("#blog_content7").click(function() {
+      $(this).after($ruby_js);
+  });
+
+    $variable_scope = ("<p>We could not be programmers without variables and Ruby is no different.  Ruby has 5 variable types that I would like to share with you.<br><br>$global_variables - these variables begin with $.  Uninitialized global variables have the value of 'nil'.  Assignment to a global variable alters the global status and will produce a warning from ruby that you are changing it’s value.  Global variables don’t seem to have much of a following and seemed to be frowned upon as making “programs cryptic”.<br><br>@instance_variables are variables available when a class is instantiated and only available to that instance of class and its methods.<br><br>@@class_variables must be initialized before being used in method definitions.  These class variables are shared among instances of the class or module in which the class variables are defined.<br><br>local_variables begin with lowercase letter or _. The scope of the local variable exist until the end of the current scope is reached.  The lifetime of local variables is determined when Ruby parses the program.<br><br>CONSTANTS might seem like something that should well just be constant.  They are referenced by all uppercase letters Ruby will also warn you if you are trying to make an assignment to a constant that has already been initialized.<br><br>There are also special variables that have the appearance of local variables but these behave like constants and they can’t be assign any values.  They are self - the receiver object of the current method; true - value representing true; false - value representing false; nil - representing undefined;  _file_: - the name of the current source file; _LINE_: - the current line number in the source file.</p>");
+
+  $("#blog_content6").click(function() {
+      $(this).after($variable_scope);
+  });
+
+      $ruby_classes = ("<p>As a beginner to programming in general, Ruby is my first language so I can only say that trying to explain the when, why, and how to use classes in Ruby will be rudimentary coming from me - so I apologies to those not at this newbie level.<br><br>Classes in Ruby, as I see them, are like a blue print, I know everyone say that, but its true. I am in construction so the analogy hit home with me. Thousands of Ruby programmers are out there writing similar code and a class is like a 'shell' of functionality or like the blueprints of a suburban track house. Lots of core structure that you use can then modify to customize your 'build'.  Classes in ruby are used all the time and you/I will also use them, and be creating them, all the time.  Classes are our structures that will hold our methods that we write to give our programs functionality. Classes already hold lots of the methods that you use for the most basic of Ruby programs so learn about them, love them, and call an instance of one...ClassBlog.new :-)</p>");
+
+  $("#blog_content5").click(function() {
+      $(this).after($ruby_classes);
+  });
+
+      $group_by = ("<p>The group_by method in Ruby, is a method that belongs to the enumerable module.  Unlike a class in Ruby a module provides access to the methods across multiple classes. Let me show you...take the follow array<br><br><b>array=[1, 4, 6, 7, 3, 8, 2, 9, 5, 7, 3, 2, 1, 0, 4] </b><br><br>and you are tasked with returning the array with the common elements next to each other. No problem your thinking, I will use Array#sort like this:<br><br><b>>>sorted_array = array.sort<br>=>[0, 1, 1, 2, 2, 3, 3, 4, 4, 5, 6, 7, 7, 8, 9]</b><br><br>and you would be done - easy peasy...wait there was another part to the challenge...you also need to 'sort' another array that looks like this:<br><br><b>>>array = [1, 4, 6, 7, 3, 'blue', 8, 2, 3, 2, 1, 0, 4, 'green', 7, 'yellow', 9, 'blue', 'green', 5, 'yellow']</b><br><br>you think no problem...execute 'sort'<br><br><b>>>sorted_array = array.sort<br>=>'sort': comparison of Fixnum with String failed (ArgumentError)</b><br><br>Oops,you can’t use method 'sort'(which belongs to the Array class) on mixed a element array. Enter…'group_by' and the 'mixin' module that will allow you to 'sort_of' sort a mixed element 'container'. When we 'group_by' our array with the following syntax:<br><br><b>>>array.group_by{|sort| sort}</b><br><br>we will be returned a hash that looks like this: <br><br><b>=>{1=>[1, 1], 4=>[4, 4], 6=>[6], 7=>[7, 7], 3=>[3, 3], 8=>[8], 2=>[2, 2], 9=>[9], 5=>[5], 0=>[0], 'blue'=>['blue', 'blue'], 'green'=>['green', 'green'], 'yellow'=>['yellow', 'yellow']}</b><br><br>No it isn’t as pretty as Array#sort but it is the beginning step to get the results you desire but lets keep going. Now our hash class is now available so lets fetch just our strings from the hash with this example:<br><br><b>>>my_arr = my_array.group_by{|name| name.is_a? String}.fetch(true).sort</b><br><br>We will need to apply the sort and the end of this “chain” but that is ok because we no longer have a mixed element container.<br><br><b>['blue', 'blue', 'green', 'green', 'yellow', 'yellow']</b><br><br>Thanks for following along while we learn this Ruby language together.</p>");
+
+  $("#blog_content4").click(function() {
+      $(this).after($group_by);
+  });
+
+      $using_array = ("<p>As newbie programmers we begin our first look at arrays and hashes and ask ourselves when do we use them.  Being a very visual person I see arrays and hashes as expandable containers that I can put anything I want inside them.  These containers differ in that the array container is wide open but the hash container has a divider so there are two compartments.  One side has a label that says 'key' and the other says 'value'.   You are probably beginning to wonder why you would we want to use one over the other and I will try to just give you enough information to get you curious enough to want to delve deeper into the 'why'.  Arrays - they are just great for storage and in ruby you can throw and ton of 'objects' in one like String, numbers, Fixnum, Hash, Symbol, even other arrays.  Hashes, to me, are similar to databases - let’s say you are filling out a form that asks you for your name, address, etc. as you are filling in the boxes that information could be stored in a hash using 'name' as a key and what you enter as a value and then saved and retrieved using the key/value pair. Arrays and hashes are the work horses in programming and I look forward to learning how to get the most from them.</p>");
+
+  $("#blog_content3").click(function() {
+      $(this).after($using_array);
+  });
+
+      $css = ('<p><img src="../imgs/box_model.gif" alt="box" width="300" height="150">Moving elements around an HTML page to achieve your design is mandatory and knowing difference between margins, borders and padding is a great tool to have.  Lets take it from the inside out (use the image as a reference)...padding is what you would change if you had a "border" and you wanted to place your content a certain distance from it.  Use a border to accentuate your content and last, but not least, is "margin" and that is the space outside of the border.  Happy coding...</p>');
+
+  $("#blog_content2").click(function() {
+      $(this).after($css);
+  });
+
+      $why_git = ("<p>One of the most popular social networking sites out there, that you have never heard about, is call github.com.It is a social networking site for software developers and as a burgeoning software developer yourself this is a great site to utilize as your career launches.<br><br>Why, you ask...code, code, and more code. It's a smorgasbord of code that you can fork, (this is your teaser to want to go and check it out)modify and use to your hearts content. But the best feature of GitHub would be it's ability to track versions of your code with it's handy mate \"git\".  Git is software that you download on your local machine and that is when the real magic happens. As you develop your awesome project and your developer friends want to help to further your project along.  Git tracks all your friends or colleges changes and allows you to review and utilize them to your \"master\" project as you like. This is call version control and if you don't want to tear out your hair it is truly the only way to manage any software project.</p>");
+
+  $("#blog_content1").click(function() {
+      $(this).after($why_git);
+  });
+
+        $conflicts = ("<p>I am faced with conflicts everyday.  From the moment I wake up and walk around the house (I live with slobs), to driving to work (people cutting me off) to determining best method to tackle a particular job.  Conflicts to me are as natural as breathing and are inherent in humans and when I remember that it takes the emotion out of the situation. I see conflicts arise when one person does/likes something one way and the other person does/likes something a different way.  The daily \"conflicts\" might not have much emotional investment at that moment but they are filed into a \"class variable\" to be possibly used as ammunition should the emotional investment ever reach a level of importance. <br><br>A recent conflict arouse for me when my brother felt he had had enough suffering through the dying process of metastasized tumors in his lungs, he wanted to take an over dose and go out on his own terms.  His two children and I felt it was his choice and would respect any decision he had regarding how he wanted to exit this world.  His wife felt differently and because of the extreme emotional investment for everybody in this situation the \"fight or flight\" instinct was fight...fight for each of our beliefs, fight to win the other person over to our logic. For his boys is was hot anger...for me, I understand we all are entitled to our opinions and we should be able to express them.  I needed his wife to understand my view so we all got together and expressed our views but we all knew these views were immutable and we all had to \"agree\" to \"disagree\" without prejudice.  A lot easier said then done for such an emotional subject but I am closer today with my sister-in-law then my blood sister because of it. <br><br>Conflicts that are not discussed early only increase the emotions of \"fight or flight\" so if I feel  I am harboring resentments I am quick to have a conversation regarding the issue.  I feel that at the least I will gain insight into how the other person thinks and hopefully there might be a natural solution in this exchange views.</p>");
+
+  $("#blog_cult7").click(function() {
+      $(this).after($conflicts);
+  });
+
+      $values = ("<p>Accountability - so much of the time this is interpreted as blame so we defensively say or think \"it wasn’t my fault\".  I am human and \"to err\" is part of our lives.  As is such, I know I will make mistakes but when I own them, learn from them, and grow from them, I feel like I walk taller.</p>");
+
+  $("#blog_cult6").click(function() {
+      $(this).after($values);
+  });
+
+  $stereothreat = ("<p>I didn't even know this existed.  It could be that I am a little tired because it is 2:20 am and I want to finish this blog but with so many issues regarding so many aspects of social integration I am getting immune to the issues. I will need to spend more time trying to wrap my head around yet another issue to be on the lookout for in this world we call life. I will read everyone blog so I can gain insight and sensitivity to this issue that I seem to be lacking. I look forward to a follow-up blog at some point.</p>");
+
+  $("#blog_cult5").click(function() {
+      $(this).after($stereothreat);
+  });
+
+    $pairing = ("<p>I know I am not alone when I say that pairing sessions are completely new to me.  I have social anxiety to start and add the whole video format, coupled with all the new programs we are using, github, screenhero, sublime, CL, etc. and wow I am a bag of nerves. Wait I forgot the most fearful part of all…not feeling that my skills (or lack there of) are worth sharing with anybody.  Pairing really makes me feel vulnerable because you can’t hide if you don't know something you just have to let your partner know - but pairing is really awesome.  I will gladly work through all of those fears and vulnerabilities to be able to meet new people who love this field we are embracing.  Every pairing session I have had help me get better skills.</p>");
+
+  $("#blog_cult4").click(function() {
+      $(this).after($pairing);
+  });
+
+  $women_leaving = ("<p>Below is my personal reflection after reading and watching the interview at this link:<br><br><a href=\"http://www.latimes.com/opinion/op-ed/la-oe-gardner-women-in-tech-20141207-story.html\"><strong>Why Women Are Leaving the Tech Industry in Droves by Tracey Lien</a></strong><br><br>Image my chagrin when I read that line…here I am, a women at 52, changing careers to the technology industry for the very reason I am wanting to leave my current career.  I am (as I have said before) a women electrical contractor/electrician.  It has been an up hill battle trying to get “in” with a decent general contractor.  In my 3 years running my own company, I finally did find a “crazy” but decent general contractor and without “him” feeding me the “big jobs” I wouldn’t have been able to pay my bills.<br><br>What is the over arching reason that women are leaving the tech industry…gender bias (read the article for the details).  At first, I felt “hey it’s a job, doing what you love, I know it’s not fair but what is in this thing called life”,  but after hearing the stories of inequality I feel differently.  Yes I do think is wrong that women are leaving the industry because if we “leave” that is as good as failing.  We can’t affect change but getting “beaten down” by the fact that “gender bias” exists and will keep existing unless we stay strong and in the industry.  We will never have our “Martin Luther King” moment if we don’t.<br><br>BUT, as with any group that is feeling inequality we need to have resources that provide us with the strength to stay motivated.  One of those that was mentioned in the article is a group called “Women Who Code”.  If you are a women and you are feeling the pressure of gender bias try to find an outlet to release that pressure.  I know that doesn’t make change but it helps get your sanity.  Hopefully if more women stay, over time, more women will be become managers/veeps that can manage without the gender bias.</p>");
+
+  $("#blog_cult3").click(function() {
+      $(this).after($women_leaving);
+  });
+
+      $what_kind = ("<p>I have recently been asked to look at a couple of \"thinking\" approaches.  One of them is a \"growth vs fixed mindset\" and as I was reading a couple of articles on subject I immediately felt I was of the growth mindset.  I know I don't fit anywhere in to the fixed mindset but as I was reading more about the growth mindset I knew that is me but I also know I need to lighten up about how I interpret my \"failures\".  I feel I can learn anything and do anything but I grew up with success being measured by the pay check you bring home, and in that area I have never succeeded to the level of expectations of the people I am close with.  The other thinking/mind style is proposed by Anthony Gregorc and when I took his quiz the feedback I received was that I was a Concrete Random thinker.  As with most things in life you have pros and cons and I look forward to working though any of the cons I think will prevent me from achieving my goals.  Also what is different for me at my age is...I just don’t need to \"hold on\" to a certain identity. I feel like I can ebb and flow as needed to work with, and produce with, those around me while I am on this journey to become a Jr. Programmer.</p>");
+
+  $("#blog_cult2").click(function() {
+      $(this).after($what_kind);
+  });
+
+  $kit_table = ("<p>As I am rushing to complete my first remote week at DevBootCamp my last challenge was to watch a Fireside Chat with Shereef.  It hit me hard emotionally because this week has left me feeling inadequate. I have never look at education as something someone has to spoon feed to me. I know that I am in the drivers seat to and it is up to me to get the most from this expirence and after listening to Shereef I know I am in the right place. I am a kitchen. I look forward to banding with my cohorts and teaches to get and giving the most during our onsite 9 weeks. I feel I will fit into the culture of DevBootCamp. I look forward to becoming a \"mad scientist\". I am also a bit nervous...I am introvert and this is exaserbated by a lack of confidence...:9).  I will push past this and keep the \"kitchen vision\" in my head! Let's do this Grasshoppers!</p>");
+
+  $("#blog_cult1").click(function() {
+      $(this).after($kit_table);
+  });
+
+
+
+
+
+
+
+  // $(document).on("click", "p", function(){
+  //       $(this).remove();
+
+  //   });
+
+
+});
